@@ -6,4 +6,55 @@
     background-color: ;
 } */
 /* Style the DataGrid header */
+body{
+    background-color: #4E2C30;
+}
+.box{
+    width: 100%;
+    background-color: #3C171B;
+    border-radius: 40px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 12px;
 
+}
+form input{
+    justify-content: center;
+    margin-top: 32px;
+    padding: 12px;
+    border-radius: 12px;
+    border: #4b2327;
+   
+}
+form input:hover{
+    background-color: #4E2C30;
+    color: antiquewhite;
+}
+
+
+.btn{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+.btn:hover{
+    background-color: #a78b8e;
+    color: black;
+    border: #a78b8e;
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 12px;
+    font-size: 30px;
+   user-select: none;
+
+}
