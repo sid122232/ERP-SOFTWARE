@@ -1,0 +1,25 @@
+    // <div className="invoice-container ">
+    //   <div className="invoice-box ">
+    //     <div className="invoice-header">
+    //       <h1>Tax Invoice</h1>
+    //     </div>
+    //    <div className="details">
+
+    //     <div className="companyDetails">
+    //     <h2>Adept Automation</h2>
+    //       <p className="address"> 469 G.F. , H.B. Colony, Sector-21 D,
+    //       Faridabad-121001( HR),</p>
+    //       <p className="email">adeptautomation.cs@gmail.com</p>
+    //       <p className="phone">9811306205, 9315878921</p>
+    //       <p className="GST">06BLAPS9064A1Z7</p>
+    //     </div>
+    //     <div className="customerDetails"> 
+    //     <h2> <input type="text" name="customerName" value={""} onChange={""} placeholder="Enter the customer Name"/> (Bill To)</h2>
+    //       <p className="address">  <input type="text" name="customerAddress" value={""} onChange={""} placeholder="Enter the customer Address"/> </p>
+    //       <p className="email">adeptautomation.cs@gmail.com</p>
+    //       <p className="phone">9811306205, 9315878921</p>
+    //       <p className="GST">06BLAPS9064A1Z7</p>
+    //     </div>
+    //     </div>
+    //     </div>
+      // </div>

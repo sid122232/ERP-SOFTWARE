@@ -20,12 +20,28 @@ function Customers() {
   const [customers, setCustomers] = useState([]);
   
   // Fetch Customers from backend on component mount
-  useEffect(()=>{
-    fetch("http://localhost:8080/api")
-    .then((res)=>res.json())
-    .then((data)=> setCustomers(data))
-    .catch((error)=>console.log("Error fetching customers", error))
-  },[])
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+  
+    fetch("http://localhost:8080/customer", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => {
+      if (!res.ok) alert("Unauthorized or error fetching customers");
+      
+      return res.json();
+    })
+    .then(data => {
+      console.log("API response:", data);
+      setCustomers(data);
+    })
+    .catch((error) => console.log("Error fetching customers", error));
+  }, []);
+  
   const rows = customers.map((customer, index)=>({
     id:customer.id,
     companyName:customer.companyName,
@@ -38,30 +54,45 @@ function Customers() {
 
   }))
   return(
-    <Box sx={{ width: "90vw", p: 2, backgroundColor: "#8E9DA1 ", borderRadius: 2 }}>
+    
+    <Box 
+    sx={{ 
+      width: "100%", 
+      p: 2, 
+      backgroundColor: "var(--box-primary)",
+      color: "var(--box-text)",
 
-      <DataGrid
-       sx={{
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: "#007bff",
-            color: "black",
-            fontSize: "16px",
-          },
-          "& .MuiDataGrid-row": {
-      fontSize: "14px",
-      "&:hover": {
-        backgroundColor: "#f5f5f5",
+      borderRadius: 2,
+      boxSizing: "border-box",
+      overflowX: "auto",
+      marginLeft: "-40px",
+    }}
+  >
+<h1 style={{ textAlign: "center", color: "white", fontFamily: "serif", fontWeight: "bold" }}>Customers</h1>
+<DataGrid
+    autoHeight
+    sx={{
+      minWidth: "800px", // This ensures it's scrollable if needed
+      "& .MuiDataGrid-columnHeaders": {
+        backgroundColor: "black",
+        color: "black",
+        fontSize: "16px",
+      },
+      "& .MuiDataGrid-row": {
+        fontSize: "14px",
+        "&:hover": {
+          backgroundColor: "#f5f5f5",
+        },
       },
       "& .MuiTablePagination-root": {
-      backgroundColor: "#f0f0f0",
-    },
-    },
-        }}
-        rows={rows}
-        columns={columns}
-        pageSizeOptions={[5, 10, 20, 50, 100 ]}
-        checkboxSelection
-      />
+        backgroundColor: "#f0f0f0",
+      },
+    }}
+    rows={rows}
+    columns={columns}
+    pageSizeOptions={[5, 10, 20, 50, 100]}
+    checkboxSelection
+  />
         </Box>
 );
 }

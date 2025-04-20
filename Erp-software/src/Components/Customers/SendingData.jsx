@@ -59,10 +59,10 @@ function SendingData() {
   <h1 >
     Enter customers
   </h1>
-        <div className='box'>
+        <div className='main'>
 
-        <form onSubmit={handleFormSubmit}>
-            <input type="text" name="companyName" placeholder="Enter the company name" value={formData.companyName} onChange={handleChangeRequired} required />
+        <form  onSubmit={handleFormSubmit}>
+      <input type="text" name="companyName" placeholder="Enter the company name" value={formData.companyName} onChange={handleChangeRequired} required />
             <input type="text" name="zone" placeholder="East/West/North/South" value={formData.zone} onChange={handleChangeRequired} required />
             <input type="text" name="state" placeholder="Enter the state name" value={formData.state} onChange={handleChangeRequired} required />
             <input type="text" name="classification" placeholder="Trader/OEM" value={formData.classification} onChange={handleChangeRequired} required />
