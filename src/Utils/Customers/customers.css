@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  /* html, body {
+   
+    background-color: #ddb795; /* your theme */
+    /* overflow-x: hidden; */
+   */
+.box{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d49a67;
+    border-radius: 40px;
+
+}
+
+
+
+
+.btn{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+.btn:hover{
+    background-color: #c0545f;
+    color: black;
+    border: #a78b8e;
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 12px;
+    font-size: 30px;
+   user-select: none;
+
+}
